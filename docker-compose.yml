@@ -1,0 +1,15 @@
+version: '3.2'
+services:
+        tdd:
+                image: tdd:latest
+                container_name: tdd
+                network_mode: host
+                volumes: 
+                        -       type: bind
+                                source: /home/henning/containers/tdd/map
+                                target: /mnt/
+                                consistency: delegated
+                        -       type: bind
+                                source: /home/henning/containers/tdd/project
+                                target: /root/project
+                                consistency: delegated
